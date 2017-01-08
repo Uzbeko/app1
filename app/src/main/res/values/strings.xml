@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Service_test</string>
+    <string name="title_id">title_id</string>
+    <string name="pubdate_id">pubdate_id</string>
+    <string name="thumbnail_id">thumbnail_id</string>
+    <string name="link_id">link</string>
+</resources>
