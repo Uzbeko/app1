@@ -8,9 +8,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by Ed on 8/27/2015.
- */
+
 public class ListAdapter extends BaseAdapter {
 
     ArrayList<Items> data = new ArrayList<Items>();
@@ -26,13 +24,11 @@ public class ListAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        System.out.println("LLLLLL getItem is vslled: "+position);
         return getItem(position);
     }
 
     @Override
     public long getItemId(int position) {
-        System.out.println("LLLLLL getItemId is vslled: "+position);
         return position;
     }
 

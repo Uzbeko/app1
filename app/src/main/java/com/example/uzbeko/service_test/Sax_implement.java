@@ -15,11 +15,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-/**
- * Created by Ed on 8/11/2015.
- */
 public class Sax_implement extends DefaultHandler {
-//    private Object[] result = new Object[5];
+
     private ArrayList<Items> dataParser = new ArrayList<Items>();
     Items test;
     boolean start = false;
@@ -51,17 +48,7 @@ public class Sax_implement extends DefaultHandler {
             SAXParserFactory saxPF = SAXParserFactory.newInstance();
             SAXParser saxPars = saxPF.newSAXParser();
             XMLReader xmlR = saxPars.getXMLReader();
-
-//            InputStream inputStream = getResources().openRawResource(resourceName);
-////            String strfile1 = getApplicationContext().getFilesDir().getAbsolutePath() + "/serstatus.txt" ;
-//            File fail = new File("C://Users/Ed/AndroidStudioProjects/MyApplication/parser_test/src/main/res/raw");
-//            System.out.println("!!!!!!!!!!!!! ar yra tokia failo direktorija?: " + fail.isDirectory());
-
-            System.out.println("!!!!!!!!!!!!! spausdinu is Sax_test(goFeed())");
-
             xmlR.setContentHandler(this);
-            //INPUTSTREAM--
-
             //encoding----------
             InputStreamReader inputRead = new InputStreamReader(inputStream,"UTF-8");
             InputSource inputSource = new InputSource(inputRead);
@@ -125,8 +112,6 @@ public class Sax_implement extends DefaultHandler {
 
             dataParser.get(item_count).setTitle(buf.toString());
             System.out.println(item_count+" | bufbufbufuf: " + dataParser.get(item_count).getTitle());
-//            result[0]= buf.toString();
-//            System.out.println("bufbufbufuf: " + result[0]);
             buf.delete(0, buf.length());
             System.out.println("TTTTTTTTTTTTTTTT: Element is added: title");
         }
@@ -136,8 +121,6 @@ public class Sax_implement extends DefaultHandler {
 
             dataParser.get(item_count).setPubDate(buf.toString());
             System.out.println(item_count+" | bufbufbufuf: " + dataParser.get(item_count).getPubDate());
-//            result[1]= buf.toString();
-//            System.out.println("bufbufbufuf: " + result[1]);
             buf.delete(0,buf.length());
             System.out.println("TTTTTTTTTTTTTTTT: Element is added: pubDate");
         }
@@ -147,8 +130,6 @@ public class Sax_implement extends DefaultHandler {
 
             dataParser.get(item_count).setLink(buf.toString());
             System.out.println(item_count+" | bufbufbufuf: " + dataParser.get(item_count).getLink());
-//            result[1]= buf.toString();
-//            System.out.println("bufbufbufuf: " + result[1]);
             buf.delete(0,buf.length());
             System.out.println("TTTTTTTTTTTTTTTT: Element is added: link");
         }
@@ -198,17 +179,6 @@ public class Sax_implement extends DefaultHandler {
     public ArrayList<Items> getParseData(){
         return this.dataParser;
     }
-    //----------------------------------------------------------------------------------------------
-//    public String getParseResult(){
-//        if(result[0] == null){
-//            System.out.println("nulis grazinamas is getParseResult()");
-//            return null;
-//
-//        } else {
-//            System.out.println("++++++++++++++Return from Parser");
-//            return (String)result[0];
-//        }
-//    }
 
     //--------exception DoneParsingException class--------------------------------------------
     public class DoneParsingException extends SAXException {

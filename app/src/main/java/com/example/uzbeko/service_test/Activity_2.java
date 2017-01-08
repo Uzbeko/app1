@@ -10,9 +10,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
- * Created by Ed on 8/22/2015.
- */
 public class Activity_2 extends Activity {
 
     TextView textview;
@@ -29,7 +26,6 @@ public class Activity_2 extends Activity {
     protected void onPause() {
         super.onPause();
         Toast.makeText(getApplicationContext(), "onPAUSE from Activity_2.Class", Toast.LENGTH_LONG).show();
-        System.out.println("RRRRRRRRRR onPAUSE from Activity_2.Class ");
     }
 
     @Override
@@ -47,20 +43,17 @@ public class Activity_2 extends Activity {
     protected void onStop() {
         super.onStop();
         Toast.makeText(getApplicationContext(), "onStop from Activity_2.Class", Toast.LENGTH_LONG).show();
-        System.out.println("RRRRRRRRRR onStop from Activity_2.Class ");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Toast.makeText(getApplicationContext(), "onDestroy from Activity_2.Class", Toast.LENGTH_LONG).show();
-        System.out.println("RRRRRRRRRR onDestroy from Activity_2.Class ");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         Toast.makeText(getApplicationContext(), "onRestart from Activity_2.Class", Toast.LENGTH_LONG).show();
-        System.out.println("RRRRRRRRRR onRestart from Activity_2.Class ");
     }
 }

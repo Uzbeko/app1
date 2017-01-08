@@ -3,9 +3,6 @@ package com.example.uzbeko.service_test;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by Ed on 9/4/2015.
- */
 public class RawData implements Parcelable {
     int id;
     String name;

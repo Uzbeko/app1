@@ -21,8 +21,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import com.example.ed.service_test.R.*;
-
 public class My extends Activity {
 
     LocalBroadcastManager lbm1;
@@ -41,15 +39,6 @@ public class My extends Activity {
             StrictMode.setThreadPolicy(policy);
         }
     //--Buttons---------------------------------------------
-        Button button1 = (Button)findViewById(R.id.button1);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), Activity_2.class));
-
-            }
-        });
-        //-----------------------------------------------
         Button button2 = (Button)findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
 
@@ -90,21 +79,19 @@ public class My extends Activity {
 
                             Servisas.DataWrap result = (Servisas.DataWrap) intent.getSerializableExtra("ArrayList");
 
-                            System.out.println("Test receive from arraylis: " + result.getData().size());
-
 
                             Bundle extras = intent.getExtras();
                             if (extras != null) {
                                 System.out.println("RRRRRRRRRR onReceive() gavau kazka is serviso ");
                             }
-                            TextView title = (TextView) findViewById(R.id.title_id);
-                            title.setText((String) extras.get("title"));
-
-                            TextView pubDate = (TextView) findViewById(R.id.pubDate_id);
-                            pubDate.setText((String) extras.get("pubDate"));
-
-                            TextView thumbnail = (TextView) findViewById(R.id.thumbnail_id);
-                            thumbnail.setText((String) extras.get("thumbnail"));
+//                            TextView title = (TextView) findViewById(R.id.title_id);
+//                            title.setText((String) extras.get("title"));
+//
+//                            TextView pubDate = (TextView) findViewById(R.id.pubDate_id);
+//                            pubDate.setText((String) extras.get("pubDate"));
+//
+//                            TextView thumbnail = (TextView) findViewById(R.id.thumbnail_id);
+//                            thumbnail.setText((String) extras.get("thumbnail"));
 
                         }
                     };
@@ -216,18 +203,18 @@ public class My extends Activity {
                 @Override
                 public void onReceive(Context context, Intent intent) {
 
-                    Bundle extras = intent.getExtras();
-                    if (extras != null) {
-                        System.out.println("RRRRRRRRRR onReceive() gavau intent is serviso: " + (String) extras.get("ArrayList"));
-                    }
-                    TextView title = (TextView) findViewById(R.id.title_id);
-                    title.setText((String) extras.get("title"));
-
-                    TextView pubDate = (TextView) findViewById(R.id.pubDate_id);
-                    pubDate.setText((String) extras.get("pubDate"));
-
-                    TextView thumbnail = (TextView) findViewById(R.id.thumbnail_id);
-                    thumbnail.setText((String) extras.get("thumbnail"));
+//                    Bundle extras = intent.getExtras();
+//                    if (extras != null) {
+//                        System.out.println("RRRRRRRRRR onReceive() gavau intent is serviso: " + (String) extras.get("ArrayList"));
+//                    }
+//                    TextView title = (TextView) findViewById(R.id.title_id);
+//                    title.setText((String) extras.get("title"));
+//
+//                    TextView pubDate = (TextView) findViewById(R.id.pubDate_id);
+//                    pubDate.setText((String) extras.get("pubDate"));
+//
+//                    TextView thumbnail = (TextView) findViewById(R.id.thumbnail_id);
+//                    thumbnail.setText((String) extras.get("thumbnail"));
                 }
             };
 
@@ -265,48 +252,6 @@ public class My extends Activity {
         public void onServiceConnected(ComponentName name, IBinder service) {
             unbind_on_off = true;
             final Servisas.MyBinder bind = (Servisas.MyBinder)service;                              System.out.println("tttttttttttttt: prisijunge Activity prie serviso =>  onServiceConnected() is caled: ");
-
-//            Object [] result = bind.getResultSax();
-//
-//            String e = ((StringBuffer) result[0]).toString();
-//
-//------Atskira gija duomenim paimti---------------------------------------------------------
-//            final Handler han = new Handler();
-//
-//            Thread g = new Thread(){
-//                @Override
-//                public void run() {
-//
-//                    super.run();
-//                    han.postDelayed(new Runnable() {
-//                        Object[] result = bind.getObArray();
-//                        @Override
-//                        public void run() {
-//
-//                            synchronized(bind.getDataResult()) {
-//
-//                                if (bind.getDataResult().getResult() == "null") {
-//                                    System.out.println("!!!!!!!!!! uzmigo ");
-//                                   Toast.makeText(getBaseContext(), "null !!!!", Toast.LENGTH_LONG).show();
-////                                    title.setText(bind.getResultSax());
-//
-//                                    try {
-//                                        System.out.println("!!!!!!!!!! kvieciamas Wait() ");
-//                                        bind.getDataResult().wait();
-//                                    } catch (InterruptedException e) {
-//                                        e.printStackTrace();
-//                                    }
-//                                    title.setText(bind.getDataResult().getResult()+" : issauktas  po wait");
-//                                } else {
-//                                    title.setText(bind.getDataResult().getResult());
-//                                }
-//                            }
-//                        }
-//                    },10000);
-//                }
-//            };
-//            g.start();
-//-------------------------------------------------------------------------------------------------
         }
 
         @Override

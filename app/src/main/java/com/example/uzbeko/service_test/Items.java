@@ -3,9 +3,6 @@ package com.example.uzbeko.service_test;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by Ed on 8/27/2015.
- */
 public class Items implements Parcelable {
     private String title;
     private String pubDate;

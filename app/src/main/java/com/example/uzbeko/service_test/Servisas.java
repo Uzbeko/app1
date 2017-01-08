@@ -24,9 +24,6 @@ import java.util.ArrayList;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-/**
- * Created by Ed on 8/11/2015.
- */
 public class Servisas extends Service {
     Sax_implement sax;
     Handler handl;
@@ -56,12 +53,10 @@ public class Servisas extends Service {
         super.onDestroy();
         runn = false;
         this.stopSelf(startID);                        System.out.println("servisas onStartCommand int startId: " + startID);
-        System.out.println("CCCCCCC: service  onDestroy is caled from SERVISAS");
     }
 
     @Override
     public boolean onUnbind(Intent intent) {
-        System.out.println("CCCCCCC: service  onUnbind is caled from SERVISAS");
         return super.onUnbind(intent);
     }
 
@@ -93,7 +88,7 @@ public class Servisas extends Service {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    System.out.println("TTTTTT sleap 10s: ");
+                    System.out.println("TTTTTT sleap 1 min: ");
         //################################################################################################################################
                     handl.post(new Runnable() { // metodas veikia pagrindinei gijoi kur ir turetu  buti  atvaidujamas  vaizdas
 
@@ -189,7 +184,6 @@ public class Servisas extends Service {
             }
             return arr;
         }
-
     }
 
 }
